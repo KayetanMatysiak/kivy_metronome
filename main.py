@@ -42,3 +42,4 @@ class Metronome(App):
 
 if __name__ == '__main__':
     Metronome().run()
+
