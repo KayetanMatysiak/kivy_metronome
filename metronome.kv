@@ -1,0 +1,43 @@
+Main:
+
+<Main>:
+    BoxLayout:
+        orientation: 'vertical'
+        padding: '50dp'
+        spacing: '60dp'
+
+
+        Label:
+            text: 'Metronome'
+            size_hint_y: .2
+            font_name: 'fonts/Koulen-Regular.ttf'
+            font_size: '50dp'
+
+
+        Label:
+            text: str(int(my_slider.value))
+            font_name: 'fonts/Koulen-Regular.ttf'
+            font_size: '200dp'
+
+        Slider:
+            id: my_slider
+            min: 130
+            max: 240
+            step: 5
+            orientation: 'horizontal'
+            size: self.size
+            on_value: root.on_slider_value(self)
+
+#            pos_hint: {'x': .1}
+
+        Button:
+            id: play
+            text: '▶️'
+            size_hint_y: .5
+            size_hint_x: .12
+            pos_hint_x: self.width/2
+            font_name: 'fonts/NotoEmoji-VariableFont_wght.ttf'
+            font_size: '80dp'
+            pos_hint: {'center_x': 0.5}
+            background_color: 0, 0, 0, 0
+            on_press: root.change_icon(self)
